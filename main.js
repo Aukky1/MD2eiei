@@ -74,20 +74,20 @@
 
 
 
-// class Book {
-//     constructor(title, author, yearPublished) {
-//         this.title = title || 'no title'
-//         this.author = author  || 'no author'
-//         this.yearPublished = yearPublished || 0
-//     }
-//     getInfo() {
-//         return `${this.title}  ${this.author} ${this.yearPublished}`;  
+class Book {
+    constructor(title, author, yearPublished) {
+        this.title = title || 'no title'
+        this.author = author  || 'no author'
+        this.yearPublished = yearPublished || 0
+    }
+    getInfo() {
+        return `${this.title}  ${this.author} ${this.yearPublished}`;  
        
-//     }
-// }
+    }
+}
 
-// const book = new Book( '', '' , )
-// console.log(book.getInfo())
+const book = new Book( '', '' , )
+console.log(book.getInfo())
 
 
 // // // 2.
@@ -98,9 +98,9 @@
 // // // Insert your code here
 
 
-//  let  book2  =  new Book('asda' , 'dads' , 1233)
+ let  book2  =  new Book('asda' , 'dads' , 1233)
 
-// console.log(book2.getInfo())
+console.log(book2.getInfo())
 
 
 
@@ -133,56 +133,46 @@
 // • getTotalPagesByGenre(genre) - Returns the total number of pages for all 
 // books of a specified genre
 
-// class Book {
-//     constructor(title, author, pages , genre) {
-//         this.title = title 
-//         this.author = author  
-//         this.pages = pages
-//         this.genre = genre
-//     }
-//     getSummary() {
-//     return [ this.title , this.author  , this.pages , this.genre ]
-//     }
+class Book {
+    constructor(title, author, pages , genre) {
+        this.title = title 
+        this.author = author  
+        this.pages = pages
+        this.genre = genre
+    }
+    getSummary() {
+    return [ this.title , this.author  , this.pages , this.genre ]
+    }
    
-// }
-// class Library {
-//     constructor(name) {
-//         this.name = name
-//         this.books = []
-//     }
+}
+class Library {
+    constructor(name) {
+        this.name = name
+        this.books = []
+    }
 
-//     addBook(newBook) {
+    addBook(newBook) {
         
-//         if (newBook instanceof Book) {
-//             this.books.push(newBook);
-//             console.log(`${newBook.title} added to ${this.name} library.`);
-//           } else {
-//             console.log('Invalid book object provided.');
-//           }
+        if (newBook instanceof Book) {
+            this.books.push(newBook);
+            console.log(`${newBook.title} added to ${this.name} library.`);
+          } else {
+            console.log('Invalid book object provided.');
+          }
 
-//     }
+    }
 
-//     getBookByGenre(genre) {
-//         return this.books.filter(book => book.genre === genre);
-//     }
+    getBookByGenre(genre) {
+        return this.books.filter(book => book.genre === genre);
+    }
 
-//     getTotalPagesByGenre(genre) {
-//         const genreBooks = this.getBooksByGenre(genre);
-//     return genreBooks.reduce((totalPages, book) => totalPages + book.pages, 0);
+    getTotalPagesByGenre(genre) {
+        const genreBooks = this.getBooksByGenre(genre);
+    return genreBooks.reduce((totalPages, book) => totalPages + book.pages, 0);
   
-//     }
+    }
 
-// }
-// let book1 =  new  Book ('adsf' , 'fafaf' , 123124 , 'ffadf')
-// let book2 =  new  Book ('asdasd' , 'faffdfdfaf' , 12345124 , 'fggfadf')
-
-// const library = new Library("Aukky Library");
-
-// library.addBook(book1)
-// library.addBook(book2)
-
-// console.log(library.getBookByGenre("ffadf"));
-
+}
 
 // 4
 // Instruction:
@@ -190,6 +180,19 @@
 // methods in both classes.
 // Initiate code:
 // Insert your code here
+
+let book1 =  new  Book ('adsf' , 'fafaf' , 123124 , 'ffadf')
+let book3 =  new  Book ('asdasd' , 'faffdfdfaf' , 12345124 , 'fggfadf')
+
+const library = new Library("Aukky Library");
+
+library.addBook(book1)
+library.addBook(book3)
+
+console.log(library.getBookByGenre("ffadf"));
+
+
+
 
 
 // 5.
@@ -243,6 +246,11 @@ class Elevator {
 
 }
 
+// 6
+// Instruction:
+// - Create a 'Elevator' object for 'Practice 5'. Use a constructor and methods in class.
+// Initiate code:
+// // Insert your code here
 
 let elevator = new Elevator(10, 1);
 
