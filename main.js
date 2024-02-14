@@ -74,20 +74,20 @@
 
 
 
-class Book {
-    constructor(title, author, yearPublished) {
-        this.title = title || 'no title'
-        this.author = author  || 'no author'
-        this.yearPublished = yearPublished || 0
-    }
-    getInfo() {
-        return `${this.title}  ${this.author} ${this.yearPublished}`;  
+// class Book {
+//     constructor(title, author, yearPublished) {
+//         this.title = title || 'no title'
+//         this.author = author  || 'no author'
+//         this.yearPublished = yearPublished || 0
+//     }
+//     getInfo() {
+//         return `${this.title}  ${this.author} ${this.yearPublished}`;  
        
-    }
-}
+//     }
+// }
 
-const book = new Book( '', '' , )
-console.log(book.getInfo())
+// const book = new Book( '', '' , )
+// console.log(book.getInfo())
 
 
 // // // 2.
@@ -98,9 +98,9 @@ console.log(book.getInfo())
 // // // Insert your code here
 
 
- let  book2  =  new Book('asda' , 'dads' , 1233)
+//  let  book2  =  new Book('asda' , 'dads' , 1233)
 
-console.log(book2.getInfo())
+// console.log(book2.getInfo())
 
 
 
@@ -133,46 +133,62 @@ console.log(book2.getInfo())
 // • getTotalPagesByGenre(genre) - Returns the total number of pages for all 
 // books of a specified genre
 
-class Book {
-    constructor(title, author, pages , genre) {
-        this.title = title 
-        this.author = author  
-        this.pages = pages
-        this.genre = genre
-    }
-    getSummary() {
-    return [ this.title , this.author  , this.pages , this.genre ]
-    }
-   
-}
-class Library {
-    constructor(name) {
-        this.name = name
-        this.books = []
-    }
 
-    addBook(newBook) {
-        
-        if (newBook instanceof Book) {
-            this.books.push(newBook);
-            console.log(`${newBook.title} added to ${this.name} library.`);
-          } else {
-            console.log('Invalid book object provided.');
-          }
+// class Book {
+//     Constructor(title, author , pages , genre ) {
+//         this.title = title
+//         this.author = author
+//         this.pages = pages 
+//         this.genre = genre
+//     }
 
-    }
+//     getSummary(){
+//         return [this.title, this.author , this.pages , this.genre]
+//     }
 
-    getBookByGenre(genre) {
-        return this.books.filter(book => book.genre === genre);
-    }
 
-    getTotalPagesByGenre(genre) {
-        const genreBooks = this.getBooksByGenre(genre);
-    return genreBooks.reduce((totalPages, book) => totalPages + book.pages, 0);
-  
-    }
+// }
 
-}
+// class Library {
+//     Constructor(name) {
+//         this.name = name
+//         this.books = []
+//     }
+
+//     addBook(newBook){
+//         if(books instanceof newBook) {
+//             this.books.push(newBook)
+//         }
+//     }
+    
+//     getBooksByGenre(genre) {
+//             return this.books.filter(book => book.genre === genre)
+//     }
+
+//     getTotalPagesByGenre(genre) {
+//         const genreBooks = this.getBooksByGenre(genre);
+//         return genreBooks.reduce((totalPages, book) => totalPages + book.pages, 0);
+
+//     }
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // 4
 // Instruction:
@@ -181,16 +197,15 @@ class Library {
 // Initiate code:
 // Insert your code here
 
-let book1 =  new  Book ('adsf' , 'fafaf' , 123124 , 'ffadf')
-let book3 =  new  Book ('asdasd' , 'faffdfdfaf' , 12345124 , 'fggfadf')
+// let book1 =  new  Book ('adsf' , 'fafaf' , 123124 , 'ffadf')
+// let book3 =  new  Book ('asdasd' , 'faffdfdfaf' , 12345124 , 'fggfadf')
 
-const library = new Library("Aukky Library");
+// const library = new Library("Aukky Library");
 
-library.addBook(book1)
-library.addBook(book3)
+// library.addBook(book1)
+// library.addBook(book3)
 
-console.log(library.getBookByGenre("ffadf"));
-
+// console.log(library.getBookByGenre("ffadf"));
 
 
 
@@ -214,55 +229,69 @@ console.log(library.getBookByGenre("ffadf"));
 // • displayFloor(): Prints the current floor to the console.
 
 class Elevator {
-    constructor(maxFloor, minFloor) {
+    constructor(maxFloor , minFloor) {
         this.maxFloor = maxFloor
         this.minFloor = minFloor
         this.currentFloor = 0
     }
 
-    goUp(){
+    goUp() {
         if(this.currentFloor < this.maxFloor) {
-          this.currentFloor++
+            this.currentFloor++
         }
     }
 
     goDown(){
         if(this.currentFloor > this.minFloor) {
             this.currentFloor--
-          }
-
+        }
     }
 
-    goToFloor(floor){
+    goToFloor(floor) {
         if(this.currentFloor >= this.minFloor && this.currentFloor <= this.maxFloor) {
             this.currentFloor = floor
         }
-
     }
 
-    displayFloor(){
-        console.log(this.currentFloor)
-    }
 
+        displayFloor(){
+            console.log(this.currentFloor)
+        }
 }
+
+let elevator = new Elevator(10,1) 
+
+elevator.goUp()
+elevator.goUp()
+elevator.goUp()
+elevator.goUp()
+elevator.displayFloor()
+
+
+
+
+
+
+
+
 
 // 6
 // Instruction:
 // - Create a 'Elevator' object for 'Practice 5'. Use a constructor and methods in class.
 // Initiate code:
-// // Insert your code here
+ // Insert your code here
 
-let elevator = new Elevator(10, 1);
+// let elevator = new Elevator(10, 1);
 
-elevator.goUp();
-elevator.goUp();
-elevator.displayFloor();
+// elevator.goUp();
+// elevator.goUp();
+// elevator.displayFloor();
 
-elevator.goDown();
-elevator.displayFloor();
+// elevator.goDown();
+// elevator.displayFloor();
 
-elevator.goToFloor(5);
-elevator.displayFloor();
+// elevator.goToFloor(5);
+// elevator.displayFloor();
 
-elevator.goToFloor(15); 
+// elevator.goToFloor(15); 
  
